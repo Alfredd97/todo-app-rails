@@ -1,0 +1,10 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render "todo_items/todo_show" %>
+
+<div class="d-flex justify-content-evenly">
+  <%= link_to "Edit", edit_todo_item_path(@todo_item), class: "btn btn-primary" %>
+  <%= link_to "Go Back", todo_items_path, class: "btn btn-secondary" %>
+
+  <%= button_to "Delete", @todo_item, method: :delete, class: "btn btn-danger" %>
+</div>

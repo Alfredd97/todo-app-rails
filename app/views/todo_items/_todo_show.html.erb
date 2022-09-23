@@ -1,0 +1,22 @@
+
+<div class="row mb-5">
+  
+  <div class="col ms-4">
+    <h1>
+      <%= @todo_item.title %>
+      <%= tag.span class: @todo_item.priority_color do %>
+        <%= @todo_item.priority %>
+      <% end %>
+    </h1>
+  </div>
+  
+  <div class="col">
+    Due Date: <%= @todo_item.due_date %>
+  </div>
+
+</div>
+
+<h3 class="mb-5 ms-4">
+  <%= @todo_item.description %>
+</h3>
+

@@ -1,0 +1,38 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Todo List</h1>
+
+<div id="todo_items">
+
+    <div class="row mb-3 d-flex justify-content-evenly">
+
+      <div class="col ms-2">
+        <strong>Task</strong>
+      </div>
+
+      <div class="col">
+        <strong>Priority</strong>
+      </div>
+
+      <div class="col">
+        <strong>Due Date</strong>
+      </div>
+
+      <div class="col"> </div>
+    </div>
+
+</div>
+
+  <% @todo_items.each do |todo_item| %>
+
+    <div class="row mb-3 d-flex justify-content-evenly">
+      <%= render todo_item %>
+    </div>
+
+  <% end %>
+
+
+<div class="col">
+<%= link_to "New task", new_todo_item_path, class: "btn btn-sm btn-success" %>
+</div>
+

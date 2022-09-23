@@ -1,0 +1,36 @@
+<%= form_with(model: todo_item) do |form| %>
+  <% if todo_item.errors.any? %>
+    <div style="color: red">
+
+      <ul>
+        <% todo_item.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="mb-3 ms-3 me-5">
+    <%= form.label :title, style: "display: block" %>
+    <%= form.text_field :title, class: "form-control" %>
+  </div>
+
+  <div class="mb-3 ms-3 me-5">
+    <%= form.label :description, style: "display: block" %>
+    <%= form.text_area :description, class: "form-control" %>
+  </div>
+
+  <div class="mb-3 ms-3 me-5">
+    <%= form.label :due_date, style: "display: block" %>
+    <%= form.date_field :due_date, class: "form-control" %>
+  </div>
+
+  <div class="mb-3 ms-3 me-5">
+    <%= form.label :priority, style: "display: block" %>
+    <%= form.select :priority, ['High', 'Moderate', 'Low'], class: "form-select" %>
+  </div>
+
+  <div class="ms-3">
+    <%= form.submit "Save", class: "btn btn-lg btn-success" %>
+  </div>
+<% end %>

@@ -47,11 +47,6 @@ class TodoItemsController < ApplicationController
     end
   end
 
-  def complete
-    @todo_item.update_attribute(:check, !@todo_item.check)
-    redirect_to '/'
-  end
-
   # DELETE /todo_items/1 or /todo_items/1.json
   def destroy
     @todo_item.destroy
